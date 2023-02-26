@@ -154,13 +154,14 @@ ssh -i PATH_TO_GENERATED_KEY -J admin@BASTION_PUBLIC_IP magento@WEB_NODE_PRIVATE
 > Note: Ensure that you have SSH key forwarding enabled.
 
 # disable Magento Two factor authentication
-step1: SSH into magento web instance
-step2: Go to magento root folder /var/www/html/magento
-Step3: execute the following commands:
+1. step1: SSH into magento web instance
+2. step2: Go to magento root folder /var/www/html/magento
+3. Step3: execute the following commands:
 ```
 bin/magento module:disable Magento_TwoFactorAuth
 bin/magento cache:flush 
 ```
+eifjcclrclunekhtrcinbtrcjddrcukbdurdikkglghk
 
 # Clean up the infrastructure
 
