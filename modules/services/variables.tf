@@ -3,13 +3,13 @@
 ####################
 variable "az1" {
   description = "Availability zone 1, used to place subnets etc"
-  default     = "us-east-1a"
+  #default     = "us-east-1a"
   type        = string
 }
 
 variable "az2" {
   description = "Availability zone 2, used to place subnets etc"
-  default     = "us-east-1b"
+  #default     = "us-east-1b"
   type        = string
 }
 
@@ -143,7 +143,7 @@ variable "redis_engine_version" {
 #######################
 variable "mq_engine_version" {
   type    = string
-  default = "3.8.22"
+  default = "3.10.10"
 }
 
 variable "rabbitmq_username" {
@@ -159,12 +159,13 @@ variable "elasticsearch_domain" {
 }
 
 variable "es_version" {
-  default = "7.4"
+  default = "7.10"
   type    = string
 }
 
 variable "es_instance_type" {
-  default = "m5.large.elasticsearch"
+  #default = "m5.large.elasticsearch"
+  default = "t3.small.elasticsearch"
   type    = string
 }
 
@@ -180,17 +181,21 @@ variable "magento_admin_email" {
 # EC2 instance types used within the module            #
 ########################################################
 variable "ec2_instance_type_redis_cache" {
-  default = "cache.m5.large"
+  #default = "cache.m5.large"
+   default = "cache.t4g.micro"
 }
 
 variable "ec2_instance_type_redis_session" {
-  default = "cache.m5.large"
+ # default = "cache.m5.large"
+ default = "cache.t4g.micro"
 }
 
 variable "ec2_instance_type_rds" {
-  default = "db.r5.2xlarge"
+  #default = "db.r5.2xlarge"
+  default = "db.t4g.medium"
 }
 
 variable "mq_instance_type" {
-  default = "mq.m5.large"
+  #default = "mq.m5.large"
+  default = "mq.t3.micro"
 }

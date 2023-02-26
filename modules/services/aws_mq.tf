@@ -11,11 +11,11 @@ resource "aws_mq_broker" "rabbit_mq" {
   engine_version             = var.mq_engine_version
   host_instance_type         = var.mq_instance_type
   auto_minor_version_upgrade = true
-  deployment_mode            = "CLUSTER_MULTI_AZ"
+  #deployment_mode            = "CLUSTER_MULTI_AZ"
   publicly_accessible        = false
   subnet_ids = [
     var.private_subnet_id,
-    var.private2_subnet_id
+ #   var.private2_subnet_id
   ]
 
   security_groups = [
