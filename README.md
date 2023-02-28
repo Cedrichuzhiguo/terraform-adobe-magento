@@ -161,7 +161,24 @@ ssh -i PATH_TO_GENERATED_KEY -J admin@BASTION_PUBLIC_IP magento@WEB_NODE_PRIVATE
 bin/magento module:disable Magento_TwoFactorAuth
 bin/magento cache:flush 
 ```
-eifjcclrclunekhtrcinbtrcjddrcukbdurdikkglghk
+
+# install extension
+bin/magento maintenance:enable
+
+# rebuild static content
+1. change the folder to writtable: 
+```
+chmod -R 0755 
+```
+2. execute the following commands:
+```
+bin/magento setup:upgrade
+bin/magento setup:di:compile
+bin/magento setup:static-content:deploy -f
+bin/magento indexer:reindex
+bin/magento cache:flush
+bin/magento maintenance:disable
+```
 
 # Clean up the infrastructure
 
